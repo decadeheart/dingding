@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-md-5
+				form(method="POST",action="/user/signup/",id="signupform")
+					//- 注册
+					.modal-body
+						.form-group
+							label(for="username")
+							.col-sm-3
+								.sign_size.glyphicon.glyphicon-user 用户:
+							input#username.form-control(name="user[name]",type="text",placeholder="请输入5-12位的用户名")
+						.form-group
+							label(for="userpassword")
+							.col-sm-3
+								.sign_size.glyphicon.glyphicon-lock 密码:
+							input#userpassword.form-control(name="user[password]",type="password",placeholder="请输入5-12位的密码")
+						.form-group
+							label(for="confirmpassword")
+							.col-sm-4
+								.sign_size.glyphicon.glyphicon-lock 确认密码:
+							input#confirmpassword.form-control(name="confirmpassword",type="password",placeholder="请确认输入的密码")
+							label(for="email")
+							.col-sm-3
+								.sign_size.glyphicon.glyphicon-envelope 邮箱:
+							input#email.form-control(name="user[email]",type="email",placeholder="请输入邮箱")
+					.modal-footer
+						button.btn.btn-default(type="button",data-dismiss="modal") 关闭
+						button.btn.btn-success(type="submit") 注册
+	script(src="../js/validation.js")

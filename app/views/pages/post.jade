@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			form.form-horizontal(method="post", action="/post/new")
+				//hidden input
+				input(type="hidden", name="post[_id]", value="#{post._id}")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 标题
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="post[title]",value="#{post.title}")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 作者	
+					.col-sm-10
+						input#inputWriter.form-control(type="text",name="post[writer]",value="#{post.writer}")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 内容
+					.col-sm-10
+						Textarea#inputText.form-control(type="text",name="post[text]",value="#{post.text}",rows="15",cols="100")
+				button.btn.btn-primary(type="submit") 发帖

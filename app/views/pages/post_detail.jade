@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-md-12
+				span 作者 :
+				span #{post.writer}&nbsp;|&nbsp;
+				span 浏览量 :
+				span #{post.pv}&nbsp;|&nbsp;
+				span 日期 :
+				span #{moment(post.meta.updateAt).format('MM/DD/YYYY')}						
+			.col-md-12
+				h3 #{post.text}

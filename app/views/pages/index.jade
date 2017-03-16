@@ -1,0 +1,80 @@
+extends ../layout
+
+block content
+  .container
+    #carousel-example-generic.carousel.slide(data-ride="carousel")
+      ol.carousel-indicators
+        li.active(data-target="#carousel-example-generic",data-slide-to="0")
+        li(data-target="#carousel-example-generic",data-slide-to="1")
+        li(data-target="#carousel-example-generic",data-slide-to="2")
+      .carousel-inner#home(role="listbox")
+        .item.active
+          a(href="#")
+            img(src="../images/1.jpg",alt="1 slide")
+          .carousel-caption
+        .item
+          a(href="#")
+            img(src="../images/2.jpg",alt="2 slide")
+          .carousel-caption
+        .item
+          a(href="#")
+            img(src="../images/3.jpg",alt="3 slide")
+          .carousel-caption      
+      a.left.carousel-control(href="../imooc/Hello#carousel-example-generic",role="button",data-slide="prev")
+        span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+        span.sr-only Previous
+      a.right.carousel-control(href="../imooc/Hello#carousel-example-generic",role="button",data-slide="next")
+        span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+        span.sr-only Next
+  .container
+    .col-md-4
+      .news_head 新闻中心
+        a.fr(href="#") More
+      .pic_news
+        a(href="#")
+          img(src="../images/news.jpg")
+        p <<新课程开课
+        p 【名师】李开丁教授
+        p 【主讲】高等数学
+        p 【时间】10.10
+    .col-md-4
+      .news_head 新闻中心
+        a.fr(href="#") More
+      .pic_news
+        a(href="#")
+          img(src="../images/news.jpg")
+        p <<新课程开课
+        p 【名师】李开丁教授
+        p 【主讲】高等数学
+        p 【时间】10.10
+    .col-md-4
+      .news_head 新闻中心
+        a.fr(href="#") More
+      .pic_news
+        a(href="#")
+          img(src="../images/news.jpg")
+        p <<新课程开课
+        p 【名师】李开丁教授
+        p 【主讲】高等数学
+        p 【时间】10.10 
+  .container
+    .row
+      each cat in categories
+        .panel.panel-default
+          .panel-heading
+            h4 
+              a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
+          .panel-body
+            if cat.movies && cat.movies.length>0
+              each item in cat.movies
+                .col-md-2
+                  .thumbnail.image_size
+                    a(href="/movie/#{item._id}")
+                      if item.poster.indexOf('http')>-1
+                        img(src="#{item.poster}", alt="#{item.title}")
+                      else
+                        img(src="/upload/#{item.poster}", alt="#{item.title}")
+
+                    .caption
+                      h4 #{item.title}
+                      p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 观看

@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  section.about
+    .container
+      .row
+        .col-md-3
+          .list-group#about-list
+            a.list-group-item 关于我们
+            a.list-group-item 团队合作
+            a.list-group-item.active(href="#") 联系我们
+        .col-md-9#about-content
+          .about-content.about-padding(style="display: none;")
+            h1 关于我们
+            dl.us-list
+              dt 我们的主要业务
+              dd 教学视频，教学辅导书
+          .about-content.about-padding(style="display: none;")
+            h1 团队成员：
+          .about-content.about-padding
+            h1 联系我们
+  script(src="../js/about.js")

@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+	section.about
+		.container
+			.row
+				.col-md-3
+					.list-group#about-list
+						a.list-group-item.active(href="#") 控制台
+						a.list-group-item(href="/") 首页
+						a.list-group-item(href="/admin/movie/new") 课程录入
+						a.list-group-item(href="/post") 帖子录入
+						a.list-group-item(href="/admin/movie/list") 课程列表
+						a.list-group-item(href="/admin/user/list") 用户列表
+						a.list-group-item(href="/postlist") 帖子列表
+				.col-md-9#about-content
+					.panel.panel-default
+						.panel-heading 最新帖子
+						.panel-body
+							.row 
+								each item in posts
+									.caption(style="font-size:20px")
+										span #{moment(item.meta.updateAt).format('MM/DD/YYYY')}&nbsp;&nbsp;
+										span #{item.title}	

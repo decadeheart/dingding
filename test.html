@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>高等数学</title>
+    <link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+    <script src="/libs/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="/libs/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="libs/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="libs/jquery-validation/dist/localization/messages_zh.js" type="text/javascript">
+      <link href="/libs/video.js/dist/video-js.css" rel="stylesheet">
+    </script>
+    <script src="/libs/video.js/dist/video.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+   
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <video allowFullScreen="true" quality="high" width="720" height="600" align="middle" controls="controls" autoplay="autoplay">
+            <source src="/flash/1.MP4" type="video/mp4">
+          </video>
+          <div class="panel panel-defatul">
+            <div class="panel-heading">
+              <h3>评论区</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="media-list">
+                <li class="media">
+                  <div class="pull-left"><a href="#comments" data-cid="58a2eb318236be292cd1a53c" data-tid="58a160638f806a26f0d45aac" class="comment"><img src="http://7xsktl.com1.z0.glb.clouddn.com/u=2871058462,3794837019&amp;fm=21&amp;gp=0.jpg" width="40" height="40" class="media-odject"></a></div>
+                  <div class="media-body">
+                    <h4 class="media-heading">decade</h4>
+                    <p>很强</p>
+                    <hr>
+                  </div>
+                </li>
+                <div id="comments">
+                  <form id="commentForm" method="POST" action="/user/comment">
+                    <input type="hidden" name="comment[movie]" value="58a1a32468ef82438480f59c">
+                    <input type="hidden" name="comment[from]" value="58a160638f806a26f0d45aac">
+                    <div class="form-group">
+                      <textarea name="comment[content]" row="3" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                  </form>
+                  <hr>
+                  <hr>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <dl class="dl-horizontal">
+            <dt>名字</dt>
+            <dd>高等数学</dd>
+            <dt>教师</dt>
+            <dd>李开丁</dd>
+            <dt>国家</dt>
+            <dd>中国</dd>
+            <dt>语言</dt>
+            <dd>汉语</dd>
+            <dt>年份</dt>
+            <dd>2017</dd>
+            <dt>简介</dt>
+            <dd>大学数学</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <script src="/js/detail.js"></script>
+  </body>
+</html>

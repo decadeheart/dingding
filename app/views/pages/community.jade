@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+	.container
+		.col-md-3
+			ul.list-group
+				div(style="background-color:#333").list-group-item.active 热帖推荐
+				a(href="#").list-group-item 微积分习题讨论
+				a(href="#").list-group-item 线性代数学习方法
+				a(href="#").list-group-item 考试十大套路
+		.col-md-9
+			.collapse.navbar-collapse#bs-example-navbar-collapse-1
+				ul.nav.navbar-nav
+					li.active
+						a(href="#") 全部
+					li
+						a(href="#") 原创
+					li
+						a(href="#") 精华
+					li
+						a(href="#") 排行
+				form.navbar-form.navbar-left
+					a(role="button",class="btn btn-primary",style="background-color:#333;color:#fff",href="/post") 发帖
+			.panel.panel-default
+				.panel-body
+					.row 
+						each item in posts
+							.caption
+								h3 #{item.title}
+									span
+										a.btn.btn-primary(href="/post/#{item._id}",role="button",style="background-color:#333;color:#fff;float:right") 查看详情
