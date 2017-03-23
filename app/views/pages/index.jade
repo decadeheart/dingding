@@ -1,7 +1,8 @@
 extends ../layout
 
 block content
-  .container
+  img(src="http://res.cloudinary.com/dyb29pfpm/image/upload/v1490269792/stock-photo-201884497_qyti3l.jpg",style="width:100%;position:absolute;z-index:0;height:500px;opacity:0.5")
+  .container(style="margin-top:50px")
     #carousel-example-generic.carousel.slide(data-ride="carousel")
       ol.carousel-indicators
         li.active(data-target="#carousel-example-generic",data-slide-to="0")
@@ -60,21 +61,16 @@ block content
   .container
     .row
       each cat in categories
-        .panel.panel-default
-          .panel-heading
-            h4 
-              a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
-          .panel-body
-            if cat.movies && cat.movies.length>0
-              each item in cat.movies
-                .col-md-2
-                  .thumbnail.image_size
-                    a(href="/movie/#{item._id}")
-                      if item.poster.indexOf('http')>-1
-                        img(src="#{item.poster}", alt="#{item.title}")
-                      else
-                        img(src="/upload/#{item.poster}", alt="#{item.title}")
-
-                    .caption
-                      h4 #{item.title}
-                      p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 观看
+          h4 
+            a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
+          if cat.movies && cat.movies.length>0
+            each item in cat.movies
+              .col-md-2
+                .thumbnail.image_size
+                  a(href="/movie/#{item._id}")
+                    if item.poster.indexOf('http')>-1
+                      img(src="#{item.poster}", alt="#{item.title}")
+                    else
+                      img(src="/upload/#{item.poster}", alt="#{item.title}")
+                  .caption
+                    h4 #{item.title}

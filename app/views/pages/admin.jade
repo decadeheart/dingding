@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-	.container
+	.container(style="margin-top:50px")
 		.row
 			form.form-horizontal(method="post", action="/admin/movie",enctype="multipart/form-data")
 				if movie._id
@@ -51,10 +51,6 @@ block content
 					label.col-sm-2.control-label(for="inputFlash") 片源地址
 					.col-sm-10
 						input#inputFlash.form-control(type="text",name="movie[flash]", value=movie.flash)
-				.form-group
-					label.col-sm-2.control-label(for="uploadVideo") 视频上传
-					.col-sm-10
-						input#uploadVideo(type="file",name="uploadVideo")
 				.form-group
 					label.col-sm-2.control-label(for="inputYear") 年份
 					.col-sm-10

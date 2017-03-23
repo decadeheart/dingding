@@ -175,6 +175,11 @@ app.post('/post/new', function(req, res) {
               })
             }
         })
+    })
+    app.get('/signup',function(req,res){
+      res.render('signup',{
+        title:'zhuce'
+      })
     })   
     //Index
     app.get('/', Index.index)
@@ -182,7 +187,6 @@ app.post('/post/new', function(req, res) {
     app.post('/user/signup', User.signup)
     app.post('/admin/signin', User.signin)
     app.get('/signin',User.showSignin)
-    app.get('/signup',User.showSignup) 
     app.get('/logout', User.logout)
     app.get('/admin/user/list', User.signinRequired,User.adminRequired,User.list)
 
