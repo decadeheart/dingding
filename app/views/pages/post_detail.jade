@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-	.container
+	.container(style="margin-top:50px")
 		.row
 			.col-md-12
 				span 作者 :
@@ -9,6 +9,6 @@ block content
 				span 浏览量 :
 				span #{post.pv}&nbsp;|&nbsp;
 				span 日期 :
-				span #{moment(post.meta.updateAt).format('MM/DD/YYYY')}						
+				span #{moment(post.meta.createAt).format('YYYY-MM-DD HH:mm:ss')}						
 			.col-md-12
 				h3 #{post.text}

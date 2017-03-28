@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-	.container
+	.container(style="margin-top:50px")
 		.row
 			table.table.table-hover.table-bordered
 				thead
@@ -18,7 +18,7 @@ block content
 						tr(class="item-id-#{item._id}")
 							td #{item.title}
 							td #{item.writer}
-							td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+							td #{moment(item.meta.createAt).format('YYYY-MM-DD HH:mm:ss')}
 							td #{item.pv}
 							td: a(target="_blank", href="../../post/#{item._id}") 观看
 							td: a(target="_blank", href="../post/update/#{item._id}") 修改
