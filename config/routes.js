@@ -1,4 +1,5 @@
 var Index = require('../app/controllers/index') //引入movie模块
+var MoviesShop = require('../app/controllers/moviesShop')
 var User = require('../app/controllers/user') //引入User模块
 var Movie= require('../app/controllers/movie') //引入movie模块
 var Comment=require('../app/controllers/comment')
@@ -213,10 +214,6 @@ app.post('/post/new', function(req, res) {
     app.get('/results',Index.search)
 
     //电影列表页
-    app.get('/moviesShop',function(req,res){
-        res.render('moviesShop',{
-            title:'视频商城'
-        })
-    })
+    app.get('/moviesShop',MoviesShop.moviesShop)
     
 }

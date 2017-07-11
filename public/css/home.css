@@ -1,12 +1,12 @@
 
-#home{
-        height: 500px;
-      }
-      #home .item img{
-        height: 500px;
-        width: 100%;
+#home{ 
+   height: 700px;
+}
+#home .item img{
+  height: 700px;
+  width: 100%;
 
-      }
+}
 .fr{
 float: right;
 }

@@ -1,4 +1,18 @@
 extends ../layout
 block content
-  .container(style="background-color:#f2f2f2;margin-top:50px")
-    
+  .container(style="margin-top:50px")
+    .row
+      each cat in categories
+          h4.catName 
+            a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
+          if cat.movies && cat.movies.length>0
+            each item in cat.movies
+              .col-md-4
+                .movie_box.image_size.movie_hover
+                  a(href="/movie/#{item._id}")
+                    if item.poster.indexOf('http')>-1
+                      img(src="#{item.poster}", alt="#{item.title}")
+                    else
+                      img(src="/upload/#{item.poster}", alt="#{item.title}")
+                  .caption
+                    h4 #{item.title}
