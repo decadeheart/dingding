@@ -3,11 +3,11 @@ extends ../layout
 block content
 	.container(style="margin-top:50px")
 		.col-md-12
-			.container(style="100%")
+			.container
 				video#my_video_1.video-js.vjs-default-skin.vjs-big-play-centered(controls,preload="auto",width="1100",height="800",data-setup='{"example_option":true}')
 					source(src="#{movie.flash}",type='video/mp4')
-		.col-md-5(style="marigin-top:100px;border-radius:0")
-			.panel.panel-info
+		.col-md-5
+			.panel.panel-info(style="margin-top:10px;margin-left:15px;border-radius:0")
 				.panel-heading(style="text-indent:150px;background:url(http://res.cloudinary.com/dyb29pfpm/image/upload/v1490272117/stock-photo-96340805_w3mz9l.jpg)")
 					h3 简介
 				.panel-body
@@ -16,16 +16,12 @@ block content
 						dd=movie.title
 						dt 教师
 						dd=movie.doctor
-						dt 国家
-						dd=movie.country
-						dt 语言
-						dd=movie.language
 						dt 年份
 						dd=movie.year
 						dt 简介
 						dd=movie.summary			
 		.col-md-7
-			.panel.panel-info
+			.panel.panel-info(style="margin-top:10px;margin-right:-5px;border-radius:0")
 				.panel-heading(style="background:url(http://res.cloudinary.com/dyb29pfpm/image/upload/v1490272117/stock-photo-96340805_w3mz9l.jpg)")
 					h3 评论区
 				.panel-body

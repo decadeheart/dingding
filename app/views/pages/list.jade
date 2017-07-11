@@ -7,13 +7,11 @@ block content
 				thead
 					tr
 						th 类别
-						th 电影名字
-						th 导演
-						th 国家
-						th 上映年份
+						th 名字
+						th 老师
+						th 年份
 						th 录入时间
-						th 语种
-						th PV
+						th 浏览
 						th 查看
 						th 更新
 						th 删除
@@ -23,10 +21,8 @@ block content
 							td #{item.category.name}
 							td #{item.title}
 							td #{item.doctor}
-							td #{item.country}
 							td #{item.year}
 							td #{moment(item.meta.createAt).format('YYYY-MM-DD HH:mm:ss')}
-							td #{item.language}
 							td #{item.pv}
 							td: a(target="_blank", href="../../movie/#{item._id}") 观看
 							td: a(target="_blank", href="../movie/update/#{item._id}") 修改

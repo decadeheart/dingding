@@ -211,5 +211,12 @@ app.post('/post/new', function(req, res) {
 
     //results
     app.get('/results',Index.search)
+
+    //电影列表页
+    app.get('/moviesShop',function(req,res){
+        res.render('moviesShop',{
+            title:'视频商城'
+        })
+    })
     
 }
