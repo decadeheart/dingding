@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+	.container(style="margin-top:60px")
+		.row
+			form.form-horizontal(method="post", action="/admin/book",enctype="multipart/form-data")
+				if book._id
+					input(type="hidden", name="book[_id]", value=book._id)
+				.form-group
+					label.col-sm-2.control-label(for="inputCollect") 视频分类
+					.col-sm-10
+						input#inputCollect.form-control(type="text",name="book[collectName]",value=book.collectName)
+				.form-group
+					label.col-sm-2.control-label 分类选择
+					each cat in collects	
+						label.radio-inline
+							if book._id
+								input(type="radio",name="book[collect]",value=cat._id,checked=cat._id.toString()==book.collect.toString())
+							else
+								input(type="radio",name="book[collect]",value=cat._id)
+							|	#{cat.name}
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 名字
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="book[title]",value=book.title)
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 教师	
+					.col-sm-10
+						input#inputDirector.form-control(type="text",name="book[author]",value=book.author)
+				.form-group
+					label.col-sm-2.control-label(for="inputPoster") 图片地址
+					.col-sm-10
+						input#inputPoster.form-control(type="text",name="book[poster]", value=book.poster)
+				.form-group
+					label.col-sm-2.control-label(for="uploadPoster") 图片上传
+					.col-sm-10
+						input#uploadPoster(type="file",name="uploadPoster")
+				//- .form-group
+				//- 	label.col-sm-2.control-label(for="inputFlash") 书籍地址
+				//- 	.col-sm-10
+				//- 		input#inputFlash.form-control(type="text",name="book[flash]", value=book.flash)
+				.form-group
+					label.col-sm-2.control-label(for="inputYear") 年份
+					.col-sm-10
+						input#inputYear.form-control(type="number",name="book[year]",value=book.year)
+				.form-group
+					label.col-sm-2.control-label(for="inputSummary") 简介
+					.col-sm-10
+						input#inputSummary.form-control(type="text",name="book[summary]",value=book.summary)
+				.form-group
+					.col-sm-offset-2.col-sm-10
+						button.btn.btn-default(type="submit") 录入
+			hr
+			hr
+	script(src="/js/admin.js")

@@ -1,5 +1,6 @@
 var Index = require('../app/controllers/index') //引入movie模块
 var MoviesShop = require('../app/controllers/moviesShop')
+var Book = require('../app/controllers/book')
 var User = require('../app/controllers/user') //引入User模块
 var Movie= require('../app/controllers/movie') //引入movie模块
 var Comment=require('../app/controllers/comment')
@@ -215,5 +216,11 @@ app.post('/post/new', function(req, res) {
 
     //电影列表页
     app.get('/moviesShop',MoviesShop.moviesShop)
+   
+    //书城页面
+    app.get('/bookShop',Book.bookShop)
+
+    //book
+    app.post('/admin/book',User.signinRequired,User.adminRequired,)
     
 }

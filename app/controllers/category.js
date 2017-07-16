@@ -29,7 +29,7 @@ exports.list=function(req,res){
                 console.log(err)
             }
             res.render('categorylist', {
-                title: '丁丁教育网 分类列表页',
+                title: '视频分类列表页',
                 categories: categories
             })
         })
