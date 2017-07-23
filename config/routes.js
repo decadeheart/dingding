@@ -180,7 +180,7 @@ app.post('/post/new', function(req, res) {
     })
     app.get('/signup',function(req,res){
       res.render('signup',{
-        title:'zhuce'
+        title:'注册'
       })
     })   
     //Index
@@ -221,6 +221,9 @@ app.post('/post/new', function(req, res) {
     app.get('/bookShop',Book.bookShop)
 
     //book
-    app.post('/admin/book',User.signinRequired,User.adminRequired,)
-    
+    // app.post('/admin/book',User.signinRequired,User.adminRequired,Book.save,Book.savePoster)
+    app.post('/admin/book',User.signinRequired,User.adminRequired,Book.savePoster,Book.save)
+    app.get('/book/:id', Book.detail)
+    app.get('/admin/book/new',User.signinRequired,User.adminRequired,Book.new)
+    app.get('/admin/book/update/:id',User.signinRequired,User.adminRequired)
 }

@@ -34,7 +34,7 @@ exports.detail=function(req,res){
 exports.new =function(req,res){
     Category.find({},function(err,categories){
         res.render('admin', {
-            title: '后台录入页',
+            title: '视频录入页',
             categories:categories,
             movie: {}
         })
@@ -50,7 +50,7 @@ exports.update=function(req,res){
             Movie.findById(id, function(err, movie) {
                 Category.find({},function(err,categories){
                     res.render('admin', {
-                        title: '后台更新页',
+                        title: '视频更新页',
                         movie: movie,
                         categories: categories
                     })
