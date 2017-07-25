@@ -149,7 +149,7 @@ exports.list = function(req,res) {
         console.log(err)
       }
 
-      res.render('list', {
+      res.render('book_list', {
         title: '列表页',
         books: books
       })

@@ -226,4 +226,5 @@ app.post('/post/new', function(req, res) {
     app.get('/book/:id', Book.detail)
     app.get('/admin/book/new',User.signinRequired,User.adminRequired,Book.new)
     app.get('/admin/book/update/:id',User.signinRequired,User.adminRequired)
+    app.get('/booklist',Book.list)
 }

@@ -13,9 +13,9 @@ var MovieSchema = new Schema({
 		type:Number,
 		default:0
 	},
-	collect: {
+	category: {
 		type:ObjectId,
-		ref: 'Collect'
+		ref: 'Category'
 	},
 	meta: {
 		createAt: {

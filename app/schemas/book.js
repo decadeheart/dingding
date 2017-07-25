@@ -12,9 +12,9 @@ var BookSchema = new Schema({
     type: Number,
     default:0
   },
-  category: {
+  collect: {
     type: ObjectId,
-    ref: 'Category'
+    ref: 'Collect'
   },
   meta: {
     createAt: {
