@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    .container(style="margin-top:5em")
+        div(style="background-color:#f2f2f2;;display:flex;justify-content:center")
+            img(src="../images/user.png",style="width:8em;height:8em")
+        div(style="background-color:#f2f2f2;;display:flex;justify-content:center")
+            p 用户名
+        .container(style="margin-top:50px")
+            .col-md-3
+                ul.list-group#mycenter-list
+                    div.list-group-item 个人中心
+                    a(href="#").list-group-item.active 我的订单
+                    a(href="#").list-group-item 收货地址
+                    a(href="#").list-group-item 书架
+                    a(href="#").list-group-item 视频库
+            .col-md-9#mycenter-content
+                .mycenter-content.mycenter-padding
+                    p 您还没有任何订单
+                .mycenter-content.mycenter-padding(style="display: none;")
+                    p 暂无收货地址
+                .mycenter-content.mycenter-padding(style="display: none;")
+                    p 您的书架是空的
+                .mycenter-content.mycenter-padding(style="display: none;")
+                    p 您还没有任何视频
+    script(src="../js/mycenter.js")
