@@ -32,7 +32,9 @@ nav.navbar.navbar-fixed-top.navbar-inverse.navigation(role="navigation")
         .nav.navbar-nav(style="float:right")
           if user
             p.navbar-text.navbar-right
-              span.glyphicon.glyphicon-user  
+              span
+                a.user-img(href="#")
+                  img(src="/images/user.png")  
               span 欢迎您，#{user.name}
               span &nbsp;|&nbsp; 
               a.navbar-link(href="/logout") 登出

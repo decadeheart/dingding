@@ -6,7 +6,6 @@ block content
 			table.table.table-hover.table-bordered
 				thead
 					tr
-						th 类别
 						th 名字
 						th 老师
 						th 年份
@@ -18,7 +17,6 @@ block content
 				tbody
 					each item in movies
 						tr(class="item-id-#{item._id}")
-							td #{item.category.name}
 							td #{item.title}
 							td #{item.doctor}
 							td #{item.year}

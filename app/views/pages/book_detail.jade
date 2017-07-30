@@ -1,22 +1,14 @@
 extends ../layout
 
 block content
-  .container(style="margin-top:50px")
+  .container(style="margin-top:70px")
     .col-md-7
       img(src="/bookUpload/#{book.poster}",style="width:100%")      
     .col-md-5
-      .panel.panel-info(style="margin-top:10px;margin-left:15px;border-radius:0")
-        .panel-heading(style="text-indent:150px;background:url(http://res.cloudinary.com/dyb29pfpm/image/upload/v1490272117/stock-photo-96340805_w3mz9l.jpg)")
-          h3 简介
-        .panel-body
-          dl.dl-horizontal
-            dt 名字
-            dd=book.title
-            dt 教师
-            dd=book.author
-            dt 年份
-            dd=book.year
-            dt 简介
-            dd=book.summary			
-
+      .panel-body
+        dl.dl-horizontal
+          .book-title #{book.title}
+          .book-author #{book.author}
+          .book-summary #{book.summary}			
+      button.book-button.btn 立即购买
   script(src="/js/detail.js")
