@@ -19,6 +19,10 @@ nav.navbar.navbar-fixed-top.navbar-inverse.navigation(role="navigation")
           li
             a(href="/community") 社区
           li
+            a(href="/moviesShop") 视频商城
+          li
+            a(href="/bookShop") 书城
+          li
             form(mthod="GET",action="/results")
               ul.nav.nav-pills(style="margin-top:10px")
                 li
@@ -28,6 +32,7 @@ nav.navbar.navbar-fixed-top.navbar-inverse.navigation(role="navigation")
         .nav.navbar-nav(style="float:right")
           if user
             p.navbar-text.navbar-right
+              span.glyphicon.glyphicon-user  
               span 欢迎您，#{user.name}
               span &nbsp;|&nbsp; 
               a.navbar-link(href="/logout") 登出
@@ -35,7 +40,7 @@ nav.navbar.navbar-fixed-top.navbar-inverse.navigation(role="navigation")
             p.navbar-text.navbar-right
               a.navbar-link(href="/signup") 注册
               span &nbsp;|&nbsp; 
-              a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
+              a.navbar-link(href="/signin") 登录
 #signinModal.modal.fade
   .modal-dialog
     .modal-content

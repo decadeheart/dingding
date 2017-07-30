@@ -1,5 +1,6 @@
 var Index = require('../app/controllers/index') //引入movie模块
 var MoviesShop = require('../app/controllers/moviesShop')
+var Book = require('../app/controllers/book')
 var User = require('../app/controllers/user') //引入User模块
 var Movie= require('../app/controllers/movie') //引入movie模块
 var Comment=require('../app/controllers/comment')
@@ -179,7 +180,7 @@ app.post('/post/new', function(req, res) {
     })
     app.get('/signup',function(req,res){
       res.render('signup',{
-        title:'zhuce'
+        title:'注册'
       })
     })   
     //Index
@@ -216,6 +217,7 @@ app.post('/post/new', function(req, res) {
     //电影列表页
     app.get('/moviesShop',MoviesShop.moviesShop)
 
+
     //个人中心
     app.get('/mycenter',function(req,res){
         res.render('mycenter',{
@@ -229,4 +231,15 @@ app.post('/post/new', function(req, res) {
             title:'个人账户'
         })
     })
+   
+    //书城页面
+    app.get('/bookShop',Book.bookShop)
+
+    //book
+    // app.post('/admin/book',User.signinRequired,User.adminRequired,Book.save,Book.savePoster)
+    app.post('/admin/book',User.signinRequired,User.adminRequired,Book.savePoster,Book.save)
+    app.get('/book/:id', Book.detail)
+    app.get('/admin/book/new',User.signinRequired,User.adminRequired,Book.new)
+    app.get('/admin/book/update/:id',User.signinRequired,User.adminRequired)
+    app.get('/booklist',Book.list)
 }

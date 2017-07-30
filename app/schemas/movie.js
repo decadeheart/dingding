@@ -5,8 +5,6 @@ var ObjectId= Schema.Types.ObjectId
 var MovieSchema = new Schema({
 	doctor: String,
 	title: String,
-	language: String,
-	country: String,
 	summary: String,
 	flash: String,
 	poster: String,
