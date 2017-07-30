@@ -216,6 +216,21 @@ app.post('/post/new', function(req, res) {
 
     //电影列表页
     app.get('/moviesShop',MoviesShop.moviesShop)
+
+
+    //个人中心
+    app.get('/mycenter',function(req,res){
+        res.render('mycenter',{
+            title:'个人中心'
+        })
+    })
+    
+    //个人账户
+    app.get('/myaccount',function(req,res){
+        res.render('myaccount',{
+            title:'个人账户'
+        })
+    })
    
     //书城页面
     app.get('/bookShop',Book.bookShop)
