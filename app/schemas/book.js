@@ -8,6 +8,7 @@ var BookSchema = new Schema({
   poster:String,
   year:Number,
   summary: String,
+  price: String,
   pv: {
     type: Number,
     default:0
